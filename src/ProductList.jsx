@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ProductList.css'
-import { useDispatch } from 'react-redux';
-import { addItem } from '../CartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from './CartSlice';
 import CartItem from './CartItem';
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
@@ -319,3 +319,5 @@ function ProductList({ onHomeClick }) {
               )}
             </div>
 )};
+
+export default ProductList;
