@@ -237,7 +237,7 @@ function ProductList(props) {
     padding: '15px',
     display: 'flex',
     justifyContent: 'space-between',
-    alignIems: 'center',
+    alignItems: 'center',
     fontSize: '20px',
    }
    const styleObjUl={
@@ -298,12 +298,17 @@ const handlePlantsClick = (e) => {
                     <h2>{plant.name}</h2>
                     <p>{plant.description}</p>
                     <p>{plant.cost}</p>
-                    <button style={{backgroundColor:alreadyInCart(plant.name)?"gray":"#615EFC"}} disabled={alreadyInCart(plant.name)? true:false} onClick={()=>handleAddToCart({name:plant.name,cost:plant.cost,image:plant.image})} className='product-button'>Add to Cart</button>
+                    <button
+                        style={{ backgroundColor: alreadyInCart(plant.name) ? "gray" : "#615EFC" }}
+                        disabled={alreadyInCart(plant.name)}
+                        onClick={() => handleAddToCart({ name: plant.name, cost: plant.cost, image: plant.image })}
+                        className='product-button'
+                    >
+                    {alreadyInCart(plant.name) ? "Added to Cart" : "Add to Cart"}
+                    </button>
                 </div>)}
                  </div>
             </div>)}
-
-
         </div>
  ) :  (
     <CartItem onContinueShopping={handleContinueShopping}/>
